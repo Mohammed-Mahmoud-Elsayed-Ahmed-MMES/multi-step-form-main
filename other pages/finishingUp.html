@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/master.css">
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <!-- icon of the website -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Multi-step form</title>
+
+</head>
+<body>
+
+    <img src="../assets/images/bg-sidebar-mobile.svg" alt="" class="sidebarMob__img">
+    <div class="container">
+    
+        <!-- Sidebar start -->
+        <div class="sidebar">
+            <img src="../assets/images/bg-sidebar-desktop.svg" alt="" class="sidebar__img">
+            <div class="sidebarList">
+                <button class="one">1</button>
+                <span>STEP 1</span>
+                <p>YOUR INFO</p>
+        
+                <button class="two">2</button>
+                <span>STEP 2</span>
+                <p>SELECT PLAN</p>
+    
+                <button class="three">3</button>
+                <span>STEP 3</span>
+                <p>ADD-ONS</p>
+    
+                <button class="four painted">4</button>
+                <span>STEP 4</span>
+                <p>SUMMARY</p>
+            </div>
+    
+        </div>
+        <!-- sidebar end-->
+
+        <!-- Step 4 start -->
+        <div class="finishingUp">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+
+            <div class="total">
+                <h4>Arcade (<span class="first">Monthly</span>)</h4>
+                <a href="../other pages/selectPlan.html">Change</a>
+                <span class="second">$9/mo</span>
+                <hr>
+                <div class="div">
+                    <p>Online Service</p>
+                    <span class="third">+$1/mo</span>
+                </div>
+                <div class="div">
+                    <p>Larger Storage</p>
+                    <span class="fourth">+$2/mo</span>
+                </div>
+            </div>
+            <div class="totalNumber">
+                <p>Total(per <span class="fifth">month</span>)</p>
+                <span class="sixth">+$12/mo</span>
+            </div>
+
+            <div class="twoButton">
+                <button id="back">Go Back</button>
+                <button id="next" type="submit">Confirm</button>
+            </div>
+        </div>
+
+        <!-- Step 4 end -->
+
+    </div>
+    <script>
+        /* const finishingUpH4 = document.querySelector(".finishingUp h4");
+        window.onmessage("message", function(event) {
+            const message = event.data;
+            if (message.messageToFinish) {
+                finishingUpH4.innerHTML = "Yearly";
+            }
+        });*/
+        const next = document.querySelector('.finishingUp #next');
+        next.addEventListener('click', () => {
+            window.location.href = '../other pages/thankU.html';
+        });
+        const back = document.querySelector('.finishingUp #back');
+        back.addEventListener('click', () => {
+            window.location.href = '../other pages/addOne.html';
+        });
+    </script>
+    <script src="../JS/main.js"></script>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Mohamed Mahmoud</a>.
+    </div>
+</body>
+</html>

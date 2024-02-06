@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/master.css">
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <!-- icon of the website -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Multi-step form</title>
+
+</head>
+<body>
+
+    <img src="../assets/images/bg-sidebar-mobile.svg" alt="" class="sidebarMob__img">
+    <div class="container">
+    
+        <!-- Sidebar start -->
+        <div class="sidebar">
+            <img src="../assets/images/bg-sidebar-desktop.svg" alt="" class="sidebar__img">
+            <div class="sidebarList">
+                <button class="one">1</button>
+                <span>STEP 1</span>
+                <p>YOUR INFO</p>
+        
+                <button class="two">2</button>
+                <span>STEP 2</span>
+                <p>SELECT PLAN</p>
+    
+                <button class="three painted">3</button>
+                <span>STEP 3</span>
+                <p>ADD-ONS</p>
+    
+                <button class="four">4</button>
+                <span>STEP 4</span>
+                <p>SUMMARY</p>
+            </div>
+    
+        </div>
+        <!-- sidebar end-->
+
+        <!-- Step 3 start -->
+        <form action="#" method="" class="addOns">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+
+            <div class="rectangles">
+                <div class="check One">
+                    <input type="checkbox" id="checkbox1" name="checkbox">
+                    <label for="checkbox1">
+                        <div>
+                            <h4>Online service</h4>
+                            <p>Access to multiplayer games</p>
+                        </div>
+                        <span id="addOnsSpan1">+$1/mo</span>
+                    </label>
+                </div>
+                
+                <div class="check Two">
+                    <input type="checkbox" id="checkbox2" name="checkbox">
+                    <label for="checkbox2">
+                        <div>
+                            <h4>Larger storage</h4>
+                            <p>Extra 1TB of cloud save</p>
+                        </div>
+                        <span id="addOnsSpan2">+$2/mo</span>
+                    </label>
+                </div>
+                
+                <div class="check Three">
+                    <input type="checkbox" id="checkbox3" name="checkbox">
+                    <label for="checkbox3">
+                        <div>
+                            <h4>Customizable Profile</h4>
+                            <p>Custom theme on your profile</p>
+                        </div>
+                        <span id="addOnsSpan3">+$2/mo</span>
+                    </label>
+                </div>
+                
+            </div>
+
+            <div class="twoButton">
+                <button id="back">Go Back</button>
+                <button id="next" type="submit">Next Step</button>
+            </div>
+        </form>
+
+        <!-- Step 3 end -->
+
+    </div>
+    <script>
+
+        /* window.addEventListener("message", function(event) {
+            const message = event.data;
+          
+            if (message.addOnsUpdate) {
+              const addOnsSpan1 = document.querySelector(".addOns .rectangles #addOnsSpan1");
+              const addOnsSpan2 = document.querySelector(".addOns .rectangles #addOnsSpan2");
+              const addOnsSpan3 = document.querySelector(".addOns .rectangles #addOnsSpan3");
+          
+              addOnsSpan1.innerHTML = "+$10/yr";
+              addOnsSpan2.innerHTML = "+$20/yr";
+              addOnsSpan3.innerHTML = "+$20/yr";
+            }
+          });*/
+
+        const next = document.querySelector('.addOns .twoButton #next');
+        next.addEventListener('click', () => {
+            console.log('Next button clicked');
+            window.location.href = 'finishingUp.html';
+        });
+
+        const back = document.querySelector('.addOns .twoButton #back');
+        back.addEventListener('click', () => {
+            console.log('Back button clicked');
+            window.location.href = '../other pages/finishingUp.html';
+        });
+    </script>
+    <script src="../JS/main.js"></script>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Mohamed Mahmoud</a>.
+    </div>
+</body>
+</html>

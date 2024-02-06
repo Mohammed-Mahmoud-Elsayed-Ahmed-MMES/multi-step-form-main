@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/master.css">
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <!-- icon of the website -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Multi-step form</title>
+
+</head>
+<body>
+
+    <img src="../assets/images/bg-sidebar-mobile.svg" alt="" class="sidebarMob__img">
+    <div class="container">
+    
+    <!-- Sidebar start -->
+        <div class="sidebar">
+            <img src="../assets/images/bg-sidebar-desktop.svg" alt="" class="sidebar__img">
+            <div class="sidebarList">
+                <button class="one">1</button>
+                <span>STEP 1</span>
+                <p>YOUR INFO</p>
+    
+                <button class="two painted">2</button>
+                <span>STEP 2</span>
+                <p>SELECT PLAN</p>
+
+                <button class="three">3</button>
+                <span>STEP 3</span>
+                <p>ADD-ONS</p>
+
+                <button class="four">4</button>
+                <span>STEP 4</span>
+                <p>SUMMARY</p>
+            </div>
+
+        </div>
+        
+        <!-- Step 2 start -->
+
+        <div class="selectPlan">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+
+            <div class="boxes">
+                <div class="box o1">
+                    <img src="../assets/images/icon-arcade.svg" alt="">
+                    <p>Arcade</p>
+                    <span>$9/mo</span>
+                    <small id="small">2 months free</small>
+                </div>
+                <div class="box t2">
+                    <img src="../assets/images/icon-advanced.svg" alt="">
+                    <p>Advanced</p>
+                    <span>$12/mo</span>
+                    <small id="small">2 months free</small>
+                </div>
+                <div class="box th3">
+                    <img src="../assets/images/icon-pro.svg" alt="">
+                    <p>Pro</p>
+                    <span>$15/mo</span>
+                    <small id="small">2 months free</small>
+                </div>
+            </div>
+            <div class="mainSwitch">
+                <span id="one">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="two">Yearly</span>
+            </div>
+            
+            <div class="twoButton">
+                <button id="back">Go Back</button>
+                <button id="next" type="submit">Next Step</button>
+            </div>
+            
+        </div>
+
+<!-- Step 2 end -->
+    
+    </div>
+    <script>
+        // The code below is amazing because of 1- the way we use querySelectorAll with elements that is not array
+        // And 2- the way of definning this variable checkbox because the change happens thanks to the input ((type:checkbox))
+        // And 3- the addEventListener"change" and the way we used it with the input of ((type:checkbox))
+
+    /*const month = document.querySelector('#one');
+    const year = document.querySelector('#two');
+    const checkbox = document.querySelector(".switch input");
+    const price1 = document.querySelector(".boxes .o1 span");
+    const price2 = document.querySelector(".boxes .t2 span");
+    const price3 = document.querySelector(".boxes .th3 span");
+    const smallText = document.querySelectorAll("#small");
+    const boxOfPlans = document.querySelectorAll(".selectPlan .box");
+
+// Check if there is a saved state in session storage
+const savedState = sessionStorage.getItem('checkboxState');
+if (savedState === "checked") {
+    checkbox.checked = true;
+
+    month.style.color = "var(--CoolGray)";
+    year.style.color = "var(--MarineBlue)"; 
+
+    boxOfPlans.forEach((element) => {
+        element.style.paddingBottom = "15px";
+    });
+
+    smallText.forEach((element) => {
+        element.style.visibility = "visible";
+    });
+
+    price1.innerHTML = "$90/yr";
+    price2.innerHTML = "$120/yr";
+    price3.innerHTML = "$150/yr";
+    }
+
+    // Add an event listener to the checkbox
+    checkbox.addEventListener("change", function() {
+    if (checkbox.checked) {
+        month.style.color = "var(--CoolGray)";
+        year.style.color = "var(--MarineBlue)"; 
+
+        boxOfPlans.forEach((element) => {
+            element.style.paddingBottom = "15px";
+        });
+
+        smallText.forEach((element) => {
+            element.style.visibility = "visible";
+        });
+
+        price1.innerHTML = "$90/yr";
+        price2.innerHTML = "$120/yr";
+        price3.innerHTML = "$150/yr";
+
+        // Save the state in session storage
+        sessionStorage.setItem('checkboxState', 'checked');
+    } else {
+        month.style.color = "var(--MarineBlue)";
+        year.style.color = "var(--CoolGray)";
+
+        boxOfPlans.forEach((element) => {
+            element.style.paddingBottom = "0";
+        });
+
+        smallText.forEach((element) => {
+            element.style.visibility = "hidden";
+        });
+
+        price1.innerHTML = "$9/mo";
+        price2.innerHTML = "$12/mo";
+        price3.innerHTML = "$15/mo";
+
+        // Remove the state from session storage
+        sessionStorage.removeItem('checkboxState');
+    }
+
+        // Send message to the other HTML file
+        const message = {
+            addOnsUpdate: checkbox.checked
+        };
+        window.postMessage(message, "addOne.html");
+    }); */
+        
+        const next = document.querySelector('.selectPlan #next');
+        next.addEventListener('click', () => {
+            window.location.href = '../other pages/addOne.html';
+        });
+        const back = document.querySelector('.selectPlan #back');
+        back.addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+/*    
+        // Get all the box elements
+        const boxes = document.querySelectorAll('.box');
+
+        // Check if there is an activated box in local storage
+        const activatedBox = sessionStorage.getItem('activatedBoxe');
+        if (activatedBox) {
+            // Remove the active class from all boxes
+            boxes.forEach(box => box.classList.remove('activatedBox'));
+
+            // Add the active class to the saved activated box
+            document.querySelector(activatedBox).classList.add('activatedBox');
+        }
+
+        // Add event listener to each box
+        boxes.forEach(box => {
+            box.addEventListener('click', () => {
+                // Remove the active class from all boxes
+                boxes.forEach(b => b.classList.remove('activatedBox'));
+
+                // Add the active class to the clicked box
+                box.classList.add('activatedBox');
+
+                // Save the activated box in local storage
+                sessionStorage.setItem('activatedBoxe', `.${box.classList[1]}`);
+            });
+        }); */
+    </script>
+    <script src="../JS/main.js"></script>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Mohamed Mahmoud</a>.
+    </div>
+</body>
+</html>
